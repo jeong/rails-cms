@@ -1,0 +1,37 @@
+swagger: "2.0"
+info:
+  description: "This is HTTP API Specification of Rails-CMS"
+  version: "0.0.1"
+  title: "Rails-CMS API Specification"
+  contact:
+    email: "cometkim.kr@gmail.com"
+  license:
+    name: "MIT"
+basePath: "/v0"
+tags:
+- name: "user"
+  description: "Operations about user"
+schemes:
+- "http"
+paths:
+  /users:
+    get:
+      tags:
+        - user
+      summary: "Get all users"
+      operationId: "getUsers"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: Succeed to get all users
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/User"
+definitions:
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "string"
