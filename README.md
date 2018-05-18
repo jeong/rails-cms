@@ -1,5 +1,8 @@
 # rails-cms
-Build a CMS using RoR
+Build a Headless CMS using RoR
+
+## Demo
+Working in progress
 
 ## Goals
 - Get familiar with RoR
@@ -8,11 +11,21 @@ Build a CMS using RoR
 
 ## Feature Goals
 - Basic management features of CMS
+  - [ ] Pages (Meta)
   - [ ] Posts
   - [ ] Media
   - [ ] Comments
-- [ ] Basic Dashboard
-- [ ] HTTP API
+- Basic UI
+  - [ ] Site Console
+  - [ ] Dashboard
+  - [ ] Content Editor
 - [ ] Basic Authentication & Authorization
-- [ ] Webhook
+- [ ] HTTP API
+- [ ] Webhook (Outgoing)
 
+## Additional Goals
+- Deploy to production
+- Practice TDD/BDD in the Ruby's way
+
+## LICENSE
+MIT
