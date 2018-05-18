@@ -4,6 +4,7 @@ services:
     image: mariadb:10.2
     environment:
       - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=rails-cms_development
     volumes:
       - db-data:/var/lib/mysql
 
