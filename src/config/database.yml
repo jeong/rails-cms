@@ -1,21 +1,22 @@
 default: &default
-  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: password
-  host: db 
 
 development:
   <<: *default
-  database: rails-cms_development
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 test:
   <<: *default
-  database: rails-cms_test
+  adapter: sqlite3
+  database: db/test.sqlite3
 
 production:
   <<: *default
-  database: rails-cms-mysql_production
-  username: rails-cms-mysql
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  host: <%= ENV.fetch('MYSQL_HOST') { 'db' } %>
+  port: <%= ENV.fetch('MYSQL_PORT') { 3306 } %>
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  database: <%= ENV['MYSQL_DATABASE'] %>

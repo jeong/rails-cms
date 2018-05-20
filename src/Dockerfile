@@ -23,13 +23,12 @@ RUN set -ex; \
 # Build app
 WORKDIR /usr/src/app
 COPY Gemfile Gemfile.lock ./
-RUN bundle install
+RUN bundle install --without development test
 COPY . .
 
-# Run app
 COPY docker-entry.sh /
 RUN chmod +x /docker-entry.sh
-ENTRYPOINT [ "/docker-entry.sh" ]
+ENTRYPOINT ["/docker-entry.sh"]
 
 EXPOSE 3000
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-e", "production"]
